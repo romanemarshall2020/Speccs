@@ -27,7 +27,9 @@ db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 // open the connection to mongo
-db.on('open' , ()=>{});
+db.on('open' , ()=>{
+  console.log("connected to mongo")
+});
 
 //___________________
 //Middleware
@@ -42,11 +44,20 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-
+const Phones = require('./models/phones.js')
 
 //___________________
 // Routes
 //___________________
+// Index Route
+app. get('/phones', (req, res) => {
+  Phones.find({}, (error, allPhones) => {
+    console.log(allPhones)
+    res.render('index.ejs', {
+      phones: allPhones
+    })
+  })
+})
 //localhost:3000
 app.get('/' , (req, res) => {
   res.send('Hello World!');
