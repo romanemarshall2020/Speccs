@@ -77,6 +77,20 @@ app.get('/phones/:id', (req, res) => {
   })
 })
 
+// edit
+app.get('/phones/:id/edit', (req, res) =>{
+  Phones.findById(req.params.id, (error, foundPhone) =>{
+      if (error) {
+          console.log(error)
+      }
+      console.log(foundPhone)
+      res.render('edit.ejs', {
+          phone: foundPhone
+          
+      })
+  })
+})
+
 // Create Route
 app.post('/phones', (req, res) => {
   // console.log(req.body)
@@ -87,12 +101,25 @@ app.post('/phones', (req, res) => {
   })
 })
 
+// update
+app.put('/phones/:id', (req, res)=> {
+  Phones.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedModel) => {
+    console.log(req.body)
+      if (error) {
+          console.log(error)
+      }
+      res.redirect('/phones')
+  })
+})
+
 // delete
 app.delete('/phones/:id', (req, res) => {
   Phones.findByIdAndRemove(req.params.id, {userFindAndModify: false}, (error, data) => {
     res.redirect('/phones')
   })
 })
+
+
 //localhost:3000
 app.get('/' , (req, res) => {
   res.send('Hello World!');

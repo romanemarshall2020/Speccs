@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= phones.name %> Show Page</title>
+    <title><%= phone.name %> Show Page</title>
 </head>
 <body>
-    <h1><%= phones.name %> </h1>
-        <!-- <h1><%= phones.name %> </h1> -->
-        Price: <h3><%= phones.price %></h3>
-        <a href="/phones/<%= phones.id %> "><img src=" <%= phones.img %>  " alt=""></a> <br>
-        Description: <%= phones.description %> <br>
-        Quantity: <h3><%= phones.qty %></h3>
+    <h1><%= phone.name %> </h1>
+        <!-- <h1><%= phone.name %> </h1> -->
+        Price: <h3><%= phone.price %></h3>
+        <a href="/phones/<%= phone.id %> "><img src=" <%= phone.img %>  " alt=""></a> <br>
+        Description: <%= phone.description %> <br>
+        Quantity: <h3><%= phone.qty %></h3>
   
     <nav>
         <a href="/phones">Back to search</a>
