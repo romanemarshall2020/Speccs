@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <title>Products Page</title>
 </head>
 <body>
-    <h1>Products Page</h1>
+    <header>
+        <h1>Products Page</h1>
+    </header>
+    
     <ul>
         <nav>
             <a href="/phones/new">Add New Listing</a>
         </nav>
+        <div class="container">
         <% for( let i = 0; i < phones.length; i++ ) { %>
             <h1><%= phones[i].name %> </h1>
             <a href="/phones/<%= phones[i].id %>"><img src=" <%= phones[i].img %>  " alt=""></a> <br>
             Description: <p><%= phones[i].description %> </p> 
-            Price: <h3><%= phones[i].price %></h3>
+            Price: <h3>$<%= phones[i].price %></h3>
             
 
             <form action="/phones/<%= phones[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE"/>
+                <input type="submit" class="btn btn-default" value="DELETE"/>
             </form>
 
-            <a href="/phones/<%= phones[i].id %>/edit">Edit</a>
+            <button class="btn btn-default" ><a href="/phones/<%= phones[i].id %>/edit">EDIT</a></button>
         <% } %> 
-            
+        </div>  
        
         
     </ul>

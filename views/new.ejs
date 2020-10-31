@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
     <title>New Products Page</title>
 </head>
 <body>
     <h1>New Product Page</h1>
-    <form action="/phones" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name"> <br>
-        
-        <label for="img">Image:</label>
-         <input type="text" name="img"> <br>
-       
-         <label for="description">Description:</label>
-         <input type="text" name="description" id="description"> <br>
-         
-       <label for="price">Price:</label>
-        <input type="text" name="price" id="price">  <br>
-         
-        <input type="submit" value="Create product">
-    </form>
+   
+        <form action="/phones" method="POST">
+            <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" name="name" id="name"> <br>
+            </div>
+
+            <div class="form-group">
+            <label for="img">Image URL:</label>
+            <input type="text" class="form-control" name="img"> <br>
+            </div>
+
+            <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" name="description" id="description"> <br>
+            </div>
+
+            <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="text" class="form-control" name="price" id="price">  <br>
+            </div>
+            <input type="submit" class="btn btn-default" value="Create product">
+        </form>
+    </div>
     
 </body>
 </html>
