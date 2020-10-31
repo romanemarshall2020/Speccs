@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
     <title>Products Page</title>
 </head>
 <body>
@@ -17,9 +18,10 @@
         </nav>
         <div class="container">
         <% for( let i = 0; i < phones.length; i++ ) { %>
-            <h1><%= phones[i].name %> </h1>
+            <div class="col-sm-4">
+            <h1><%= phones[i].name %> </h1> 
             <a href="/phones/<%= phones[i].id %>"><img src=" <%= phones[i].img %>  " alt=""></a> <br>
-            Description: <p><%= phones[i].description %> </p> 
+            <!-- Description: <p class="descrip"><%= phones[i].description %> </p>  -->
             Price: <h3>$<%= phones[i].price %></h3>
             
 
@@ -28,6 +30,7 @@
             </form>
 
             <button class="btn btn-default" ><a href="/phones/<%= phones[i].id %>/edit">EDIT</a></button>
+        </div>
         <% } %> 
         </div>  
        
