@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Products Page</title>
 </head>
 <body>
     <h1>Products Page</h1>
     <ul>
         <nav>
-            <a href="phones/new">Add New Listing</a>
+            <a href="/phones/new">Add New Listing</a>
         </nav>
         <% for( let i = 0; i < phones.length; i++ ) { %>
             <h1><%= phones[i].name %> </h1>
@@ -22,7 +23,7 @@
                 <input type="submit" value="DELETE"/>
             </form>
 
-            <a href="/phones/<%= phones[i].id %>/edit">Edit</a>
+            <!-- <a href="/phones/<%= phones[i].id %>/edit">Edit</a> -->
         <% } %> 
             
        
