@@ -9,11 +9,12 @@
 </head>
 <body>
     <div class="container">
-        <h1><%= phone.name %> </h1>
-        <div class="price">  Price: <h3>$<%= phone.price %></h3></div>
-        
-        <a href="/phones/<%= phone.id %> "><img src=" <%= phone.img %>" alt=""></a> <br>
-       
+        <div class="pic">     
+            <h1><%= phone.name %> </h1>
+            <div class="price">  Price: <h3>$<%= phone.price %></h3></div>
+            <a href="/phones/<%= phone.id %> "><img src=" <%= phone.img %>" alt=""></a> <br>
+        </div>
+   
         <div class="desciption">
             <!-- Description: <div class="description"> -->
             <div>Launched: <p> <%= phone.launched %> </p></div> <br>

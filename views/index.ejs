@@ -18,9 +18,9 @@
 
         <div class="nav1">
             <nav class="list">
-                <a href="/phones/new">Add New Listing</a>
-                <a href="">Apple</a>
-                <a href="">Samsung</a>
+                <div class="nav"><a href="/phones/new">Add New Listing</a></div>
+                <div class="nav"><a href="">Apple</a></div>
+                <div class="nav"><a href="">Samsung</a></div>
             </nav>
         </div>
         <div class="container1">
@@ -32,12 +32,13 @@
                             <h1 class="name"><%= phones[i].name %> </h1>
                             <a href="/phones/<%= phones[i].id %>"><img src=" <%= phones[i].img %>  " alt=""></a> <br>
                             <!-- Description: <p class="descrip"><%= phones[i].description %> </p>  -->
-                           <h3>$<%= phones[i].price %></h3>
-
+                            <h3>$<%= phones[i].price %></h3>
+                            
+                            <button class="btn btn-default" id="button"><a href="/phones/<%= phones[i].id %>/edit">EDIT</a></button>
                             <form action="/phones/<%= phones[i].id%>?_method=DELETE" method="POST">
-                                <input type="submit" class="btn btn-default" value="DELETE" />
+                                <input type="submit" class="btn btn-default" id="edit" value="DELETE" />
                             </form>
-                            <button class="btn btn-default"><a href="/phones/<%= phones[i].id %>/edit">EDIT</a></button>
+                            
                         </div>
                     </div>
 
