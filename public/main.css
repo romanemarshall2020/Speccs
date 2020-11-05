@@ -57,7 +57,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(5, 2fr);
     grid-auto-rows: minmax(50px, auto);
-    grid-template-areas: "hd hd hd hd hdgit"
+    grid-template-areas: "hd hd hd hd hd"
                             "nav mc mc mc mc" 
                            "ft ft ft ft ft " ;
     border: 3px solid black;  
