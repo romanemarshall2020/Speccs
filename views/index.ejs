@@ -1,40 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="main.css">
     <title>Products Page</title>
 </head>
+
 <body>
-    <header>
-        <h1>Products Page</h1>
-    </header>
-    
-    <ul>
-        <nav>
-            <a href="/phones/new">Add New Listing</a>
-        </nav>
-        <div class="container">
-        <% for( let i = 0; i < phones.length; i++ ) { %>
-            <div class="col-sm-4">
-            <h1><%= phones[i].name %> </h1> 
-            <a href="/phones/<%= phones[i].id %>"><img src=" <%= phones[i].img %>  " alt=""></a> <br>
-            <!-- Description: <p class="descrip"><%= phones[i].description %> </p>  -->
-            Price: <h3>$<%= phones[i].price %></h3>
-            
-
-            <form action="/phones/<%= phones[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" class="btn btn-default" value="DELETE"/>
-            </form>
-
-            <button class="btn btn-default" ><a href="/phones/<%= phones[i].id %>/edit">EDIT</a></button>
+    <div class="container0">
+        <div class="header">
+            <h1> Devices</h1>
         </div>
-        <% } %> 
-        </div>  
-       
-        
-    </ul>
+
+        <div class="nav1">
+            <nav class="list">
+                <a href="/phones/new">Add New Listing</a>
+                <a href="">Apple</a>
+                <a href="">Samsung</a>
+            </nav>
+        </div>
+        <div class="container1">
+            <ul>
+                <!-- <div > -->
+                    <% for( let i = 0; i < phones.length; i++ ) { %>
+                    <!-- <div> -->
+                        <h1 class="name"><%= phones[i].name %> </h1>
+                        <a href="/phones/<%= phones[i].id %>"><img src=" <%= phones[i].img %>  " alt=""></a> <br>
+                        <!-- Description: <p class="descrip"><%= phones[i].description %> </p>  -->
+                        Price: <h3>$<%= phones[i].price %></h3>
+
+                        
+                            <form action="/phones/<%= phones[i].id%>?_method=DELETE" method="POST">
+                                <input type="submit" class="btn btn-default" value="DELETE" />
+                            </form>
+                        <!-- </div> -->
+
+                        <button class="btn btn-default"><a
+                        href="/phones/<%= phones[i].id %>/edit">EDIT</a></button>
+
+                    <!-- </div> -->
+                    <% } %>
+                <!-- </div> -->
+            </ul>
+        </div>
+        <footer class="footer"></footer>
+    </div>
+
+
+   
 </body>
+
 </html>

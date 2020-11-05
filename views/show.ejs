@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= phone.name %> Show Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="../show.css" type="text/css">
+    <title><%= phone.name %></title>
 </head>
 <body>
-    <h1><%= phone.name %> </h1>
-        <!-- <h1><%= phone.name %> </h1> -->
-        Price: <h3><%= phone.price %></h3>
-        <a href="/phones/<%= phone.id %> "><img src=" <%= phone.img %>  " alt=""></a> <br>
-        Description: <%= phone.description %> <br>
-        Quantity: <h3><%= phone.qty %></h3>
-  
-    <nav>
-        <a href="/phones">Back to search</a>
-    </nav>
+    <div class="container">
+        <h1><%= phone.name %> </h1>
+        <div class="price">  Price: <h3>$<%= phone.price %></h3></div>
+        
+        <a href="/phones/<%= phone.id %> "><img src=" <%= phone.img %>" alt=""></a> <br>
+       
+        <div class="desciption">
+            <!-- Description: <div class="description"> -->
+            <div>Launched: <p> <%= phone.launched %> </p></div> <br>
+            <div>Display: <p> <%= phone.display %> </p></div> <br>
+            <div>Memory:  <p> <%= phone.memory %> </p></div> <br>
+            <div>Camera:  <p> <%= phone.camera %> </p></div> <br>
+            <!-- Quantity: <h3><%= phone.qty %></h3> -->
+        </div>
+        <nav>
+            <a href="/phones">Back to search</a>
+        </nav>
+    </div>
 </body>
 </html>

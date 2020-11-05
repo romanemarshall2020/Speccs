@@ -1,14 +1,71 @@
-img {
-    max-width: 150px;
-    max-height: 150px;
+body {
+    margin: 40px;
 }
 
-.descrip {
-    border: 2px solid #0066FF; 
-    background-color:#FFCC33; 
-    padding: 5px; 
+img {
+    max-width: 100px;
+    max-height: 100px;
 }
-.container {
-    display: flex
+.nav1 {
+    background-color: antiquewhite;
+    /* padding: 10px; */
+    display: grid;
+    grid-area: nav;
+    /* margin: 20px; */
+}
+.header {
+    background-image: url("https://www.freewebheaders.com/wp-content/gallery/mobile-phones-headers/thumbs/thumbs_decorated-smartphone-on-pink-background-header.jpg") ;
+    grid-area: hd;
+    margin: 20px;
+  
+}
+.container1 {
+    font-size: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    grid-area: mc;
+    margin: 2px;
+
     
 }
+
+footer {
+    background-color: black;
+    
+    grid-area: ft;
+    margin: 20px
+}
+
+
+.container0 {
+    display: grid;
+    /* grid-gap: 10px; */
+    grid-template-columns: repeat(6, 2fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-template-areas: "hd hd hd hd hd hd"
+                            "nav mc mc mc mc mc " 
+                           "ft ft ft ft ft ft " ;
+    border: 3px solid black;
+
+    
+}
+/* .desc {
+    border: 2px solid #0066FF; 
+    background-color:#FFCC33; 
+    padding: 20px; 
+} */
+
+
+.name {
+    font-size: 25px;
+
+}
+
+
+
+.list {
+    display: grid;
+
+}
+

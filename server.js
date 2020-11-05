@@ -9,13 +9,11 @@ const db = mongoose.connection;
 //////////
 //Port
 ////
-// ports that can be used.
 const PORT = process.env.PORT || 3000;
 
 ////////
 //Database
 ////
-// connection to database
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+`mockdb`;
 
 // Connect to Mongo
@@ -46,11 +44,11 @@ app.use(express.json());// returns information as a json object
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 const Phones = require('./models/phones.js')
 
-//___________________
+
 // Routes
-//___________________
+
 // Index Route
-app. get('/phones', (req, res) => {
+app.get('/phones', (req, res) => {
   Phones.find({}, (error, allPhones) => {
     console.log(allPhones)
     res.render('index.ejs', {
@@ -70,6 +68,7 @@ app.get('/phones/new', (req, res) => {
 // show
 app.get('/phones/:id', (req, res) => {
   Phones.findById(req.params.id, (error, foundPhone) => {
+    console.log(foundPhone)
       res.render('show.ejs', {
           phone: foundPhone
           
