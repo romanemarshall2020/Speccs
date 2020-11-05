@@ -9,4 +9,21 @@ img {
 .description {
     text-align: center;
 }
+.pic {
+    grid-area: pic;
+}
+
+.description {
+    grid-area: des;
+}
+
+.container {
+    display: grid;
+    grid-template-columns:repeat(5, 2fr);
+    grid-auto-rows: 50px, auto;
+    grid-template-areas: "pic pic des des des"
+                            "pic pic des des des"
+                            "pic pic des des des";
+    border: 3px solid black;
+}
 
