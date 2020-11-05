@@ -1,5 +1,5 @@
 body {
-    margin: 40px;
+    /* margin: 40px; */
 }
 
 img {
@@ -14,25 +14,38 @@ img {
     /* margin: 20px; */
 }
 .header {
-    background-image: url("https://www.freewebheaders.com/wp-content/gallery/mobile-phones-headers/thumbs/thumbs_decorated-smartphone-on-pink-background-header.jpg") ;
+    background-image: url("http://maasatienterprise.com/images/sitemap.jpg") ;
     grid-area: hd;
     margin: 20px;
+    margin-top: 0%;
+    margin-left: 0%;
+    text-align: center;
+	width: 758px;
+	height: 150px;
+	background-size: 100%;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+    border-radius: 0 0 85% 85% / 30%;
+   float: left;
   
 }
 .container1 {
     font-size: 1.5rem;
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
     grid-area: mc;
-    margin: 2px;
+}
 
+.content {
+    background-color: lightgrey;
+    border-radius: 10%;
+    
     
 }
 
 footer {
     background-color: black;
-    
     grid-area: ft;
     margin: 20px
 }
@@ -40,25 +53,17 @@ footer {
 
 .container0 {
     display: grid;
-    /* grid-gap: 10px; */
-    grid-template-columns: repeat(6, 2fr);
+    grid-template-columns: repeat(5, 2fr);
     grid-auto-rows: minmax(50px, auto);
-    grid-template-areas: "hd hd hd hd hd hd"
-                            "nav mc mc mc mc mc " 
-                           "ft ft ft ft ft ft " ;
-    border: 3px solid black;
-
-    
+    grid-template-areas: "hd hd hd hd hdgit"
+                            "nav mc mc mc mc" 
+                           "ft ft ft ft ft " ;
+    border: 3px solid black;  
 }
-/* .desc {
-    border: 2px solid #0066FF; 
-    background-color:#FFCC33; 
-    padding: 20px; 
-} */
 
 
 .name {
-    font-size: 25px;
+    font-size: 15px;
 
 }
 
@@ -67,5 +72,9 @@ footer {
 .list {
     display: grid;
 
+}
+
+h3 {
+  font-size: 15px;
 }
 
