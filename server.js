@@ -21,7 +21,7 @@ mongoose.connect(MongoURI ,  { useNewUrlParser: true,  useUnifiedTopology: true,
   () => console.log('MongoDB connection established:', MongoURI)
   );
 
-// Error / success
+// connection messages
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MongoURI));
 db.on('disconnected', () => console.log('mongo disconnected'));
@@ -29,23 +29,16 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // controllers
 const phonesController = require('./controllers/phones')
 
-// open the connection to mongo
-// db.on('open' , ()=>{
-//   console.log("connected to mongo")
-// });
 
 /////////
 //Middleware
-/////
-
-// app.use(morgan('dev'))
-
+////
 // use public folder for CSS styling
 app.use(express.static('public'));
 
-// populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
-app.use(express.json());// returns information as a json object
+// populates req.body with parsed info from forms 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());// returns information as an object
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
@@ -56,12 +49,7 @@ app.use('/phones', phonesController)
 app.get('/' , (req, res) => {
   res.redirect('/phones');
 });
-
-// app.get('*', (req, res) => {
-//   res.render('./four-oh-four/index.ejs')
-// })
-
-//___________________
-//Listener
-//___________________
+///////////////
+// listener
+/////////
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
