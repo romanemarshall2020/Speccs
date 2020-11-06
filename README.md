@@ -1,5 +1,7 @@
 # newrepo
-the purpose of my app is to show a list of past and current phones along with there images, dscriptions amd current price.
+the purpose of my app is to show a list of past and current phones along with there images, dscriptions and current price.
+
+completing this project was challenging 
 
 
 
