@@ -14,24 +14,31 @@ const PORT = process.env.PORT || 3000;
 ////////
 //Database
 ////
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+`mockdb`;
+const MongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/mockdb';
 
 // Connect to Mongo
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
+mongoose.connect(MongoURI ,  { useNewUrlParser: true,  useUnifiedTopology: true, useFindAndModify: false },
+  () => console.log('MongoDB connection established:', MongoURI)
+  );
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
+db.on('connected', () => console.log('mongo connected: ', MongoURI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
+// controllers
+const phonesController = require('./controllers/phones')
+
 // open the connection to mongo
-db.on('open' , ()=>{
-  console.log("connected to mongo")
-});
+// db.on('open' , ()=>{
+//   console.log("connected to mongo")
+// });
 
 /////////
 //Middleware
 /////
+
+// app.use(morgan('dev'))
 
 // use public folder for CSS styling
 app.use(express.static('public'));
@@ -42,87 +49,17 @@ app.use(express.json());// returns information as a json object
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-const Phones = require('./models/phones.js')
 
-
-// Routes
-
-// Index Route
-app.get('/phones', (req, res) => {
-  Phones.find({}, (error, allPhones) => {
-    console.log(allPhones)
-    res.render('index.ejs', {
-      phones: allPhones
-    })
-  })
-})
-
-
-// New Route // this route links to my new.ejs file, which is am html boilerplat.
-// with inputs for the name, img, descrpition and the price of the new product i want.
-// to add to my page
-app.get('/phones/new', (req, res) => {
-  res.render('new.ejs');
-});
-
-// show
-app.get('/phones/:id', (req, res) => {
-  Phones.findById(req.params.id, (error, foundPhone) => {
-    console.log(foundPhone)
-      res.render('show.ejs', {
-          phone: foundPhone
-          
-      })
-  })
-})
-
-// edit
-app.get('/phones/:id/edit', (req, res) =>{
-  Phones.findById(req.params.id, (error, foundPhone) =>{
-      if (error) {
-          console.log(error)
-      }
-      console.log(foundPhone)
-      res.render('edit.ejs', {
-          phone: foundPhone
-          
-      })
-  })
-})
-
-// Create Route
-app.post('/phones', (req, res) => {
-  // console.log(req.body)
-  Phones.create(req.body, (error, createdPhone) => {
-    if(error) {
-      console.log(error)
-    }else {res.redirect('/phones')}
-  })
-})
-
-// update
-app.put('/phones/:id', (req, res)=> {
-  Phones.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedModel) => {
-    console.log(req.body)
-      if (error) {
-          console.log(error)
-      }
-      res.redirect('/phones')
-  })
-})
-
-// delete
-app.delete('/phones/:id', (req, res) => {
-  Phones.findByIdAndRemove(req.params.id, {userFindAndModify: false}, (error, data) => {
-    res.redirect('/phones')
-  })
-})
-
+app.use('/phones', phonesController)
 
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+  res.redirect('/phones');
 });
+
+// app.get('*', (req, res) => {
+//   res.render('./four-oh-four/index.ejs')
+// })
 
 //___________________
 //Listener
