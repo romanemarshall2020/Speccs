@@ -33,19 +33,19 @@ const phonesController = require('./controllers/phones')
 /////////
 //Middleware
 ////
-// use public folder for CSS styling
+// Public folder for CSS styling
 app.use(express.static('public'));
 
 // populates req.body with parsed info from forms 
 app.use(express.urlencoded({ extended: false }));
-app.use(express.json());// returns information as an object
+app.use(express.json());
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 app.use('/phones', phonesController)
 
-//localhost:3000
+// Redirects you to main index page once the website opens
 app.get('/' , (req, res) => {
   res.redirect('/phones');
 });

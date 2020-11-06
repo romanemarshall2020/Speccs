@@ -1,6 +1,5 @@
 body {
-    /* margin: 40px; */
-    background-color: #007CC7;
+    background-color: #12232E;
 }
 
 img {
@@ -9,11 +8,11 @@ img {
 }
 .nav1 {
     background-color: #EEFBFB;
-    /* padding: 10px; */
     display: grid;
     grid-area: nav;
-    /* margin: 20px; */
+ 
 }
+/* image Reference from http://maasatienterprise.com/sitemap.html */
 .header {
     background-image: url("http://maasatienterprise.com/images/sitemap.jpg") ;
     grid-area: hd;
@@ -27,7 +26,6 @@ img {
 	background-attachment: fixed;
 	position: relative;
 	overflow: hidden;
-    /* border-radius: 0 0 85% 85% / 30%; */
    float: left;
   
 }
@@ -36,13 +34,14 @@ img {
     display: flex;
     flex-wrap: wrap;
     grid-area: mc;
+    justify-content: space-between;
 }
 
 .content {
-    background-color: lightgrey;
+    background-color: #EEFBFB;
     border-radius: 5%;
     margin-left: 3rem;
-    /* padding: -4rem; */
+   
     
 }
 
@@ -56,7 +55,7 @@ footer {
 .container0 {
     display: grid;
     grid-template-columns: repeat(5, 2fr);
-    grid-auto-rows: minmax(50px, auto);
+    grid-auto-rows: minmax(100px, auto);
     grid-template-areas: "hd hd hd hd hd"
                             "nav mc mc mc mc" 
                            "ft ft ft ft ft " ;
