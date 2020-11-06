@@ -4,8 +4,8 @@ body {
 }
 
 img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 150px;
+    max-height: 150px;
 }
 .nav1 {
     background-color: #EEFBFB;
@@ -40,8 +40,8 @@ img {
 
 .content {
     background-color: lightgrey;
-    border-radius: 10%;
-    margin-left: -3rem;
+    border-radius: 5%;
+    margin-left: 3rem;
     /* padding: -4rem; */
     
 }
