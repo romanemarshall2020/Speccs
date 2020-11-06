@@ -2,6 +2,12 @@ body {
     background-color: #12232E;
 }
 
+.head {
+    font-size: 70px;
+font-style: oblique;
+color:#4DA8DA ;
+}
+
 img {
     max-width: 150px;
     max-height: 150px;

@@ -13,14 +13,18 @@
 <body>
     <div class="container0">
         <div class="header">
-            <h1> Speccs</h1>
+            <h1 class="head"> Speccs</h1>
         </div>
 
         <div class="nav1">
             <nav class="list">
                 <div class="nav"><a href="/phones/new">Add New Listing</a></div>
-                <div class="nav"><a href="">Apple</a></div>
-                <div class="nav"><a href="">Samsung</a></div>
+                <div class="nav"><h2>Apple</h2>
+                    <a href="http://localhost:3000/phones/5f9c4bbbab3d5d2fbd383eb4">Apple iPhone X</a>
+                </div>
+                <div class="nav"><h2>Samsung</h2>
+
+                </div>
             </nav>
         </div>
         <div class="container1">
@@ -29,7 +33,7 @@
                     <% for( let i = 0; i < phones.length; i++ ) { %>
                     <div class="col-sm-4">
                         <div class="content">
-                            <h1 class="name"><%= phones[i].name %> </h1>
+                            <h1 class="name card-title"><%= phones[i].name %> </h1>
                             <a href="/phones/<%= phones[i].id %>"><img src=" <%= phones[i].img %>  " alt=""></a> <br>
                             <!-- Description: <p class="descrip"><%= phones[i].description %> </p>  -->
                             <h3>$<%= phones[i].price %></h3>
